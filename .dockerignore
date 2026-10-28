@@ -1,0 +1,9 @@
+.git
+.env*
+.tools
+target
+reports
+mcp-runtime/node_modules
+src/test
+
+.ruff_cache

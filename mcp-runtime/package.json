@@ -1,0 +1,12 @@
+{
+  "name": "incident-investigator-mcp-runtime",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Pinned official Sentry MCP executable; not application source",
+  "dependencies": {
+    "@sentry/mcp-server": "0.42.0"
+  },
+  "overrides": {
+    "@modelcontextprotocol/sdk": "1.32.0"
+  }
+}

@@ -1,0 +1,6 @@
+[
+  {"id":"missing-reference","question":"Algunos pedidos fallan al guardarse. Investiga qué entradas están afectadas, contrasta las trazas con el código y la documentación y prepara una incidencia con evidencias.","review":"Use real Sentry observations, code at the running checkout SHA and the optional-field contract. Compare payloads with and without the reference on the same checkout. Do not invent a previous release or infer a post-deployment increase. Do not infer rates without denominators."},
+  {"id":"client-distribution","question":"¿Afecta por igual a los clientes legacy-1 y web-2? Contrasta los eventos disponibles y explica las limitaciones de la comparación.","review":"Use client tags and bounded event windows. Recognize samples and missing denominators."},
+  {"id":"insufficient-evidence","question":"Investiga si el cambio de color del botón de pagar causa errores en este servicio. No tengo una captura ni un evento asociado.","review":"Avoid inventing a frontend or a confirmed cause. Request useful clarification or finish with insufficient evidence."},
+  {"id":"code-vs-schema","question":"Comprueba si falla PostgreSQL o si el guardado ni siquiera llega a ejecutar SQL.","review":"Compare stack trace, controller order and schema. Support facts with IDs and leave causal claims conditional on reproduction."}
+]

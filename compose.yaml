@@ -1,0 +1,26 @@
+services:
+  db:
+    image: postgres:17.6-alpine
+    environment:
+      POSTGRES_DB: investigator
+      POSTGRES_USER: investigator
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD}
+    volumes: ["investigator-data:/var/lib/postgresql/data"]
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U investigator"]
+      interval: 5s
+      retries: 15
+  app:
+    build: .
+    ports: ["127.0.0.1:18092:8080"]
+    env_file: .env
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/investigator
+      DB_USER: investigator
+      DB_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD}
+      CORPUS_PATH: /app/corpus
+    volumes: ["${CORPUS_PATH:?Set CORPUS_PATH}:/app/corpus:ro"]
+    depends_on:
+      db: {condition: service_healthy}
+volumes:
+  investigator-data:

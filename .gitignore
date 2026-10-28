@@ -1,0 +1,13 @@
+/target/
+/.tools/
+/.env
+/.env.*.local
+/reports/*
+!/reports/.gitkeep
+/mcp-runtime/node_modules/
+
+__pycache__/
+*.pyc
+/.idea/
+
+/.ruff_cache/
