@@ -7,3 +7,4 @@ mcp-runtime/node_modules
 src/test
 
 .ruff_cache
+.venv-style/

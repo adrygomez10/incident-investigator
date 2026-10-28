@@ -5,21 +5,23 @@ package dev.adriangm.investigator.application;
  * escapes.
  */
 public final class AgentFailure extends RuntimeException {
-  /** Stable application failure code retained in the investigation outcome. */
-  public final String code;
+    /** Stable application failure code retained in the investigation outcome. */
+    public final String code;
 
-  /** Provider delay before a later execution may retry, or zero when unspecified. */
-  public final long retryAfterSeconds;
+    /** Provider delay before a later execution may retry, or zero when unspecified. */
+    public final long retryAfterSeconds;
 
-  /** Records a stable failure code and an optional delay before a later execution may retry. */
-  public AgentFailure(String code) {
-    this(code, 0);
-  }
+    /** Records a stable failure code and an optional delay before a later execution may retry. */
+    public AgentFailure(String code)
+    {
+        this(code, 0);
+    }
 
-  /** Records a stable failure code and an optional delay before a later execution may retry. */
-  public AgentFailure(String code, long retryAfterSeconds) {
-    super(code);
-    this.code = code;
-    this.retryAfterSeconds = retryAfterSeconds;
-  }
+    /** Records a stable failure code and an optional delay before a later execution may retry. */
+    public AgentFailure(String code, long retryAfterSeconds)
+    {
+        super(code);
+        this.code = code;
+        this.retryAfterSeconds = retryAfterSeconds;
+    }
 }

@@ -155,3 +155,14 @@ Desde cada carpeta, `docker compose down` detiene sus servicios y conserva el vo
 - [API y aprobación](docs/api.md): peticiones, respuestas, versiones e idempotencia.
 - [Desarrollo y comprobaciones](docs/development.md): Java, Python, PostgreSQL y pruebas controladas.
 - [ADR: arquitectura y persistencia](docs/architecture.md): reglas, alternativas y costes.
+
+## Estilo de código compartido
+
+El proyecto utiliza [Clean Code - Project Style 1.0](docs/code-style.md): cuatro espacios, 120 columnas y llaves de métodos y constructores en la línea siguiente. Spotless y Checkstyle comprueban las mismas reglas desde Maven, el precommit y el check independiente `Code style` de las pull requests.
+
+```sh
+docker compose -f compose.style.yaml run --rm --no-deps check
+docker compose -f compose.style.yaml run --rm --no-deps format
+```
+
+La guía documenta la instalación del precommit en cada clon y los límites de la comprobación automática.

@@ -14,7 +14,7 @@ python3 -m ruff format --check .
 python3 -m unittest discover -s src/test/python
 ```
 
-`verify` ejecuta pruebas, ArchUnit, Spotless y Checkstyle con el perfil Google, también sobre las pruebas. Sus avisos hacen fallar la comprobación. `./mvnw spotless:apply` aplica el formato; la revisión manual completa contratos, nombres y separación lógica. Python sigue PEP 8 y PEP 257 con Ruff fijado en `requirements-dev.txt`. No hacen falta estas herramientas de estilo para usar los scripts del recorrido básico.
+`verify` ejecuta pruebas, ArchUnit, Spotless y Checkstyle con el perfil Clean Code - Project Style, también sobre las pruebas. Sus avisos hacen fallar la comprobación. `./mvnw spotless:apply` aplica el formato; la revisión manual completa contratos, nombres y separación lógica. Python sigue PEP 8 y PEP 257 con Ruff fijado en `requirements-dev.txt`. No hacen falta estas herramientas de estilo para usar los scripts del recorrido básico.
 
 ## Persistencia real en PostgreSQL
 
