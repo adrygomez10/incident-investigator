@@ -33,35 +33,38 @@ public record InvestigationView(
     int modelCalls,
     int toolCalls,
     long inputTokens,
-    long outputTokens) {
-  /** Builds the API projection without serializing the domain aggregate directly. */
-  public static InvestigationView from(InvestigationWork work) {
-    Investigation aggregate = work.investigation();
-    return new InvestigationView(
-        aggregate.id(),
-        work.version(),
-        aggregate.scope().projectKey(),
-        aggregate.scope().repository(),
-        aggregate.question(),
-        aggregate.window().since().toString(),
-        aggregate.window().until().toString(),
-        work.requestFingerprint(),
-        aggregate.status(),
-        aggregate.createdAt(),
-        work.messages(),
-        aggregate.evidence(),
-        work.steps(),
-        aggregate.diagnosis(),
-        work.modelConfiguration(),
-        aggregate.draft(),
-        aggregate.clarification(),
-        aggregate.failure(),
-        aggregate.approvalKey(),
-        aggregate.approvedHash(),
-        aggregate.issueUrl(),
-        work.modelCalls(),
-        work.toolCalls(),
-        work.inputTokens(),
-        work.outputTokens());
-  }
+    long outputTokens
+) {
+    /** Builds the API projection without serializing the domain aggregate directly. */
+    public static InvestigationView from(InvestigationWork work)
+    {
+        Investigation aggregate = work.investigation();
+        return new InvestigationView(
+            aggregate.id(),
+            work.version(),
+            aggregate.scope().projectKey(),
+            aggregate.scope().repository(),
+            aggregate.question(),
+            aggregate.window().since().toString(),
+            aggregate.window().until().toString(),
+            work.requestFingerprint(),
+            aggregate.status(),
+            aggregate.createdAt(),
+            work.messages(),
+            aggregate.evidence(),
+            work.steps(),
+            aggregate.diagnosis(),
+            work.modelConfiguration(),
+            aggregate.draft(),
+            aggregate.clarification(),
+            aggregate.failure(),
+            aggregate.approvalKey(),
+            aggregate.approvedHash(),
+            aggregate.issueUrl(),
+            work.modelCalls(),
+            work.toolCalls(),
+            work.inputTokens(),
+            work.outputTokens()
+        );
+    }
 }

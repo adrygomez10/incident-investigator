@@ -8,8 +8,9 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication(scanBasePackages = "dev.adriangm.investigator")
 @EnableScheduling
 public class InvestigatorApplication {
-  /** Starts the configured application and its framework-managed lifecycle. */
-  public static void main(String[] args) {
-    SpringApplication.run(InvestigatorApplication.class, args);
-  }
+    /** Starts the configured application and its framework-managed lifecycle. */
+    public static void main(String[] args)
+    {
+        SpringApplication.run(InvestigatorApplication.class, args);
+    }
 }
